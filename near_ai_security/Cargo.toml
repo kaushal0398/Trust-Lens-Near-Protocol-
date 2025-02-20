@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 
-near-sdk = "4.0.0"  # NEAR SDK for smart contract development
-borsh = "0.9.1"  # Binary serialization for storage
-serde = { version = "1.0", features = ["derive"] }  # Serialization for JSON interaction
+
+near-sdk = { version = "5.0", features = ["legacy"] }
+borsh = "1.5.4"
+serde = { version = "1.0", features = ["derive"] }

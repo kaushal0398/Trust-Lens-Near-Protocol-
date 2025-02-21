@@ -13,4 +13,6 @@ model = DQN("MlpPolicy", env, verbose=1, learning_rate=0.001, buffer_size=50000,
 # Train AI agent on 1 million steps
 model.learn(total_timesteps=1000000)
 
-
+# Save trained model
+model.save("smart_contract_auditor_dqn")
+print("Training complete! AI auditor model saved.")

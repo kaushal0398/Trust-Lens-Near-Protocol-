@@ -10,3 +10,18 @@ def generate_exploit():
     ]
     return random.choice(attack_templates)
 
+def test_exploit(exploit_code):
+    """Runs vulnerability analysis using Mythril"""
+    contract = f"""
+    pragma solidity ^0.8.0;
+    contract Target {{
+        address payable owner;
+        constructor() {{
+            owner = payable(msg.sender);
+        }}
+        function withdraw() public {{
+            require(msg.sender == owner);
+            payable(msg.sender).transfer(address(this).balance);
+        }}
+    }}
+    

@@ -24,4 +24,13 @@ def test_exploit(exploit_code):
             payable(msg.sender).transfer(address(this).balance);
         }}
     }}
-    
+    contract Attacker {{
+        address payable target;
+        constructor(address _target) {{
+            target = payable(_target);
+        }}
+        {exploit_code}
+    }}
+    """
+    compiled = compile_source(contract)
+    print("Exploit test completed!")

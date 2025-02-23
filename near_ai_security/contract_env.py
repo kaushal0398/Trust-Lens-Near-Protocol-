@@ -29,3 +29,8 @@ class SmartContractEnv(gym.Env):
 
         return self.state, reward, done, {}
 
+    def reset(self):
+        """Reset environment after training episode"""
+        self.state = np.random.rand(10)
+        self.contracts_scanned = 0
+        return self.state

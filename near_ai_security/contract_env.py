@@ -23,3 +23,9 @@ class SmartContractEnv(gym.Env):
         elif action == 0:  # Safe contracts
             reward = 10 if np.sum(self.state) <= 3 else -3
 
+        self.state = np.random.rand(10)  # Generate new contract features
+        self.contracts_scanned += 1
+        done = self.contracts_scanned >= 1000  # Stop training after 1000 iterations
+
+        return self.state, reward, done, {}
+

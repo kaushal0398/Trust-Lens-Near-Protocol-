@@ -11,4 +11,11 @@ def analyze_contract(contract_code):
     )
     return response["choices"][0]["message"]["content"]
 
+def submit_audit(contract_id, risk_score):
+    client = NearRpcClient(NEAR_RPC)
+    client.call_function(
+        contract_id="trust_score.near",
+        method_name="submit_audit",
+        args={"contract_id": contract_id, "risk_score": risk_score}
+    )
 

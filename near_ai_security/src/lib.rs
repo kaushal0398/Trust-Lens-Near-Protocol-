@@ -23,3 +23,7 @@ impl TrustScoreContract {
         self.contract_scores.insert(&contract_id, &risk_score);
     }
 
+    pub fn update_reputation(&mut self, user_id: AccountId, new_score: u8) {
+        self.user_scores.insert(&user_id, &new_score);
+    }
+

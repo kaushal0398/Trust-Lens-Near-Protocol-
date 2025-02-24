@@ -17,3 +17,9 @@ impl Default for TrustScoreContract {
     }
 }
 
+#[near_bindgen]
+impl TrustScoreContract {
+    pub fn submit_audit(&mut self, contract_id: AccountId, risk_score: u8) {
+        self.contract_scores.insert(&contract_id, &risk_score);
+    }
+

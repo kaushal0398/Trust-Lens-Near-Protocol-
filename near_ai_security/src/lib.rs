@@ -40,3 +40,11 @@ impl TrustScoreContract {
         self.contract_scores.insert(&contract_id, &score);
     }
 }
+
+#[near_bindgen]
+impl TrustScoreContract {
+    pub fn override_score(&mut self, contract_id: AccountId, new_score: u8, dao_member: AccountId) {
+        assert!(self.is_dao_member(&dao_member), "Only DAO members can override scores.");
+        self.contract_scores.insert(&contract_id, &new_score);
+    }
+}

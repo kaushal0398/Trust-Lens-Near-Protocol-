@@ -27,3 +27,7 @@ impl TrustScoreContract {
         self.user_scores.insert(&user_id, &new_score);
     }
 
+    pub fn get_trust_score(&self, entity_id: AccountId) -> Option<u8> {
+        self.contract_scores.get(&entity_id).or(self.user_scores.get(&entity_id))
+    }
+}

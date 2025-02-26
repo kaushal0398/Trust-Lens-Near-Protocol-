@@ -28,5 +28,5 @@ def dispute_audit(contract_id, reason):
     client = NearRpcClient(NEAR_RPC)
     client.call_function(
         contract_id="trustscore.testnet",
-        args={"contract_id": contract_id}
+        args={"contract_id": contract_id, "dispute_reason": reason}
     )

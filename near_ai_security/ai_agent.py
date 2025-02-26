@@ -22,13 +22,11 @@ def submit_audit(contract_id, risk_score):
 if __name__ == "__main__":
     contract_code = "PLACEHOLDER_SMART_CONTRACT_CODE"
     analysis = analyze_contract(contract_code)
-    risk_score = 90 if "high risk" in analysis else 50 if "medium risk" in analysis else 10
     submit_audit("contract.testnet", risk_score)
 
 def dispute_audit(contract_id, reason):
     client = NearRpcClient(NEAR_RPC)
     client.call_function(
         contract_id="trustscore.testnet",
-        method_name="dispute_audit",
-        args={"contract_id": contract_id, "dispute_reason": reason}
+        args={"contract_id": contract_id}
     )

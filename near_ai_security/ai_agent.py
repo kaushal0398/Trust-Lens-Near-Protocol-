@@ -22,6 +22,7 @@ def submit_audit(contract_id, risk_score):
 if __name__ == "__main__":
     contract_code = "PLACEHOLDER_SMART_CONTRACT_CODE"
     analysis = analyze_contract(contract_code)
+
     submit_audit("contract.testnet", risk_score)
 
 def dispute_audit(contract_id, reason):

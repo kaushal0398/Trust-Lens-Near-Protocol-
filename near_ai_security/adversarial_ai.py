@@ -13,6 +13,7 @@ def generate_exploit():
 def test_exploit(exploit_code):
     """Runs vulnerability analysis using Mythril"""
     contract = f"""
+    pragma solidity ^0.8.0;
     contract Target {{
         address payable owner;
         constructor() {{

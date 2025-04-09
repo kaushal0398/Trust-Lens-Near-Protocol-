@@ -1,7 +1,4 @@
-import random
-from eth_brownie import compile_source
 
-def generate_exploit():
     """Simulates an adversarial attack on smart contracts"""
     attack_templates = [
         

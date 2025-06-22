@@ -1,0 +1,7 @@
+/home/kaush3980/Trust-Lens-Near-Protocol-/near_ai_security/target/debug/deps/libident_case-710cd164f0b9dec4.rmeta: /home/kaush3980/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ident_case-1.0.1/src/lib.rs
+
+/home/kaush3980/Trust-Lens-Near-Protocol-/near_ai_security/target/debug/deps/libident_case-710cd164f0b9dec4.rlib: /home/kaush3980/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ident_case-1.0.1/src/lib.rs
+
+/home/kaush3980/Trust-Lens-Near-Protocol-/near_ai_security/target/debug/deps/ident_case-710cd164f0b9dec4.d: /home/kaush3980/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ident_case-1.0.1/src/lib.rs
+
+/home/kaush3980/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ident_case-1.0.1/src/lib.rs:

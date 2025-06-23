@@ -1,0 +1,5 @@
+{
+    "contract_id": "sample-contract.near",
+    "score": 75,
+    "summary": "Here's an explanation of how the aforementioned contract code is prone to integer overflow issues:\n\nLet's look at the `vulnerable_function` method within the `Contract` structure in the given code snippet. This method takes no parameters and updates a field called `balance` within the `Contract` instance.\n\nBy adding 100 to the `balance` field, we're effectively increasing its value. However, we're not taking into account the possibility of integer overflow.\n\nIn Rust, when we add two large integer values, the sum might overflow and wrap around to the smallest representable value of the data type being used. This happens when the sum exceeds the maximum value that can be represented by that data type.\n\nIn this scenario, if the current value of the `balance` field is close to the maximum value that a 64-bit signed integer (`i64`)"
+}

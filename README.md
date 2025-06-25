@@ -4,16 +4,15 @@
 
 > Built with NEAR Protocol, powered by AI — Trust-Lens bridges smart security and on-chain reputation.
 
-
 ---
 
 ## 🧠 Features
 
-- 📦 Upload or input NEAR smart contract code (Rust or .wasm)
-- 🤖 Uses AI (OpenAI or local model) to detect vulnerabilities
-- 🧮 Calculates a reputation/trust score
-- 🌐 Optional: Stores results on NEAR testnet via smart contract
-- 🖥️ Simple CLI interface for local use or automation
+* 📦 Upload or input NEAR smart contract code (Rust or .wasm)
+* 🤖 Uses AI (OpenAI or local model) to detect vulnerabilities
+* 🧮 Calculates a reputation/trust score
+* 🌐 Optional: Stores results on NEAR testnet via smart contract
+* 🖥️ Simple CLI interface for local use or automation
 
 ---
 
@@ -48,7 +47,8 @@ Create a `.env` file in the root directory:
 ```env
 OPENAI_API_KEY=your_openai_api_key
 NEAR_ACCOUNT_ID=your_testnet_account.near
-NEAR_PRIVATE_KEY=ed25519:xxxxxxxxxxxxxxxxxxxxxxxxx
+NEAR_PRIVATE_KEY=ed25519
+REPUTATION_CONTRACT_ID=
 ```
 
 ---
@@ -92,6 +92,18 @@ near dev-deploy --wasmFile target/wasm32-unknown-unknown/release/reputation.wasm
 
 ---
 
+## 🐞 Known Issues
+
+While the core functionality is operational, the following areas are known to require further development or debugging:
+
+* ❌ **Smart Contract Integration**: Current WASM build fails with deserialization errors during function calls (`set_score`, `get_score`). Likely caused by dependency or feature mismatches in `near-sdk`.
+* ⚙️ **NEAR-SDK Compatibility**: `near-sdk v5.14.0` introduces dependencies (`near_abi`, `schemars`) that require explicit installation and configuration.
+* 🔐 **Private Key Handling**: The `.env` configuration must be correctly formatted to avoid runtime errors in the JS integration layer.
+* 🧪 **Limited Test Coverage**: Most testing has been conducted manually; automated unit/integration tests are pending.
+* 🌐 **No Web UI (yet)**: Project is CLI-based at the moment; plans exist for a B.O.S. or Web UI in future iterations.
+
+---
+
 ## 📚 Future Improvements
 
 * UI Dashboard for uploading contracts & viewing scores
@@ -104,3 +116,7 @@ near dev-deploy --wasmFile target/wasm32-unknown-unknown/release/reputation.wasm
 ## 👥 Credits
 
 Developed by [Kaushal](https://github.com/kaushal0398)
+
+---
+
+
